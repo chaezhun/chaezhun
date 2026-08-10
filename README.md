@@ -34,31 +34,53 @@ Military service 2023.03 – 2024.09.
 
 ## 📝 Projects
 
-| | Project | What it is | Stack |
-|---|---|---|---|
-| 01 | [YOLOv2 FPGA Accelerator](https://github.com/chaezhun/YOLO-ACCELERATOR) | A 22-layer object detector inferring end to end on a single Artix-7 | Verilog, Vivado, MicroBlaze |
-| 02 | [16×16 Matrix Multiply ASIC](https://github.com/chaezhun/MATMUL-ASIC) | Fixed-point matrix multiplier behind an SRAM interface, two MACs per cycle, no bubbles | SystemVerilog, Vivado |
-| 03 | [CNN Convolution Accelerator](https://github.com/chaezhun/CONV_ACCELERATOR) | Three-channel 5×5 stride-3 convolution taken from RTL to place-and-route | Verilog, OpenROAD, Nangate45 |
-| 04 | [Smart Sunshade](https://github.com/chaezhun/SMART_SUNSHADE) | A public sunshade that tracks the sun and folds itself in wind | Arduino, ESP8266 |
-| 05 | [K-means FPU Accelerator](https://github.com/chaezhun/KMEANS_FPU) | IEEE-754 FPU on APB replacing the software float path of a RISC-V core | Verilog, C, APB |
-| 06 | [APB Custom IP](https://github.com/chaezhun/APB_CUSTOM_IP) | Two memory-mapped accelerators — byte-parallel addition and a 128-bit SIMD MAC | Verilog, C |
-| 07 | [Strawberry Sorting System](https://github.com/chaezhun/STAWBERRY_SORTING) | Three heterogeneous boards tied into one line over CAN and IPC | C, Python, CAN, FreeRTOS |
-| 08 | [MNIST / ResNet50 Transfer](https://github.com/chaezhun/MNIST_RESNET50_TXFR) | Hyperparameter analysis and a controlled comparison against a 23.5M-parameter backbone | PyTorch |
-| 09 | [HFT Indicator Accelerator](https://github.com/chaezhun/HFT_ACCELERATOR) | Fixed-point SMA/EMA/RSI/MACD/Bollinger pipeline with deterministic latency | Verilog, C, Vivado |
-| 10 | [FPGA Self-Attention Accelerator](https://github.com/chaezhun/ATTENTION_ACCELERATOR) | QKᵀ, softmax and the value multiply verified against a Python golden model | Verilog, Python |
+### FPGA Accelerators
+
+| Project | What it is | Stack |
+|---|---|---|
+| [YOLOv2 FPGA Accelerator](https://github.com/chaezhun/YOLO-ACCELERATOR) | A 22-layer object detector inferring end to end on a single Artix-7 | Verilog, Vivado, MicroBlaze |
+| [HFT Indicator Accelerator](https://github.com/chaezhun/HFT_ACCELERATOR) | Fixed-point SMA/EMA/RSI/MACD/Bollinger pipeline with deterministic latency | Verilog, C, Vivado |
+| [FPGA Self-Attention Accelerator](https://github.com/chaezhun/ATTENTION_ACCELERATOR) | QKᵀ, softmax and the value multiply verified against a Python golden model | Verilog, Python |
+
+### ASIC & Physical Design
+
+| Project | What it is | Stack |
+|---|---|---|
+| [16×16 Matrix Multiply ASIC](https://github.com/chaezhun/MATMUL-ASIC) | Fixed-point matrix multiplier behind an SRAM interface, two MACs per cycle, no bubbles | SystemVerilog, Vivado |
+| [CNN Convolution Accelerator](https://github.com/chaezhun/CONV_ACCELERATOR) | Three-channel 5×5 stride-3 convolution taken from RTL to place-and-route | Verilog, OpenROAD, Nangate45 |
+
+### SoC & Bus IP
+
+| Project | What it is | Stack |
+|---|---|---|
+| [K-means FPU Accelerator](https://github.com/chaezhun/KMEANS_FPU) | IEEE-754 FPU on APB replacing the software float path of a RISC-V core | Verilog, C, APB |
+| [APB Custom IP](https://github.com/chaezhun/APB_CUSTOM_IP) | Two memory-mapped accelerators — byte-parallel addition and a 128-bit SIMD MAC | Verilog, C |
+
+### Embedded Systems
+
+| Project | What it is | Stack |
+|---|---|---|
+| [Strawberry Sorting System](https://github.com/chaezhun/STAWBERRY_SORTING) | Three heterogeneous boards tied into one line over CAN and IPC | C, Python, CAN, FreeRTOS |
+| [Smart Sunshade](https://github.com/chaezhun/SMART_SUNSHADE) | A public sunshade that tracks the sun and folds itself in wind | Arduino, ESP8266 |
+
+### Deep Learning
+
+| Project | What it is | Stack |
+|---|---|---|
+| [MNIST / ResNet50 Transfer](https://github.com/chaezhun/MNIST_RESNET50_TXFR) | Hyperparameter analysis and a controlled comparison against a 23.5M-parameter backbone | PyTorch |
 
 ### Results at a glance
 
 | Project | Result |
 |---|---|
-| 01 YOLOv2 | all 22 layers inferring on one Artix-7, **0 mismatch** against the C reference layer by layer |
-| 02 Matmul ASIC | **2,048 of 2,051 cycles active** (99.85%), all 256 golden values matched |
-| 03 Convolution | scored area **295,842 → 106,234 µm²** (2.8×), total score 41.3 → 33.1 |
-| 05 K-means FPU | **187.75 ms → 60.02 ms** (3.13×) measured on the board |
-| 07 Strawberry sorting | three boards and three protocols behind one command; **exactly one actuation per strawberry** at 2 fps |
-| 08 Transfer learning | **100% from 4,098 trained parameters (0.017%)**; training all 23.5M gave 66.67% |
-| 09 HFT | **890 ns latency regardless of a 7,700× price range**; 33 → 100 MHz, zero timing violations |
-| 10 Attention | a full attention head at **118.2 MHz using ~10% of the device**, 1,024 outputs verified on board |
+| YOLOv2 | all 22 layers inferring on one Artix-7, **0 mismatch** against the C reference layer by layer |
+| HFT | **890 ns latency regardless of a 7,700× price range**; 33 → 100 MHz, zero timing violations |
+| Attention | a full attention head at **118.2 MHz using ~10% of the device**, 1,024 outputs verified on board |
+| Matmul ASIC | **2,048 of 2,051 cycles active** (99.85%), all 256 golden values matched |
+| Convolution | scored area **295,842 → 106,234 µm²** (2.8×), total score 41.3 → 33.1 |
+| K-means FPU | **187.75 ms → 60.02 ms** (3.13×) measured on the board |
+| Strawberry sorting | three boards and three protocols behind one command; **exactly one actuation per strawberry** at 2 fps |
+| Transfer learning | **100% from 4,098 trained parameters (0.017%)**; training all 23.5M gave 66.67% |
 
 ## 🏅 Awards
 
@@ -115,14 +137,14 @@ zero** — sign handling, packing order, rounding direction.
 
 **Rounding and sign, again and again.** Verilog `>>>` rounds toward −∞ while C division rounds
 toward zero. On layers where negative values survive, that is a one-LSB error on every negative
-pixel, and much of the debugging in `01` and `09` came from exactly this. Reading signed values
+pixel, and much of the debugging in the YOLO and HFT accelerators came from exactly this. Reading signed values
 as unsigned was the same kind of problem: the results looked plausible, so nothing but a
 reference would have caught it.
 
 **Designing for the scoring formula, not for intuition.** Two of these projects are graded by a
-formula. In `01` energy sits in the denominator, so buying frames per second with more
-multipliers loses points — hence a fixed 144-MAC budget with 1×1 convolution reusing the 3×3
-kernel. In `03` the reference power was so small that the power term amplified the total by
+formula. In the YOLO accelerator energy sits in the denominator, so buying frames per second with
+more multipliers loses points — hence a fixed 144-MAC budget with 1×1 convolution reusing the 3×3
+kernel. In the convolution accelerator the reference power was so small that the power term amplified the total by
 143×, and that was only visible by **measuring the reference design**, not by reading the
 weights in the formula.
 

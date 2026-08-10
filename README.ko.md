@@ -33,31 +33,53 @@
 
 ## 📝 Projects
 
-| | 프로젝트 | 내용 | 기술 |
-|---|---|---|---|
-| 01 | [YOLOv2 FPGA 가속기](https://github.com/chaezhun/YOLO-ACCELERATOR) | 22개 레이어 객체 탐지기를 Artix-7 한 장에서 처음부터 끝까지 추론 | Verilog, Vivado, MicroBlaze |
-| 02 | [16×16 행렬 곱셈 ASIC](https://github.com/chaezhun/MATMUL-ASIC) | SRAM 인터페이스 뒤에 붙는 고정소수점 행렬 곱셈기. 사이클당 2 MAC, 버블 없음 | SystemVerilog, Vivado |
-| 03 | [CNN 컨볼루션 가속기](https://github.com/chaezhun/CONV_ACCELERATOR) | 3채널 5×5 stride-3 컨볼루션. RTL부터 배치·배선까지 완주 | Verilog, OpenROAD, Nangate45 |
-| 04 | [스마트 그늘막](https://github.com/chaezhun/SMART_SUNSHADE) | 해를 따라 움직이고 바람이 세지면 스스로 접히는 공공 그늘막 | Arduino, ESP8266 |
-| 05 | [K-means FPU 가속기](https://github.com/chaezhun/KMEANS_FPU) | IEEE-754 FPU를 APB로 RISC-V 코어에 붙여 소프트웨어 실수 연산을 대체 | Verilog, C, APB |
-| 06 | [APB 커스텀 IP](https://github.com/chaezhun/APB_CUSTOM_IP) | 메모리 맵 가속기 두 개 — 바이트 병렬 덧셈, 128비트 SIMD MAC | Verilog, C |
-| 07 | [딸기 선별 시스템](https://github.com/chaezhun/STAWBERRY_SORTING) | 이종 보드 3대를 CAN과 IPC로 묶어 숙도별로 선별 | C, Python, CAN, FreeRTOS |
-| 08 | [MNIST / ResNet50 전이학습](https://github.com/chaezhun/MNIST_RESNET50_TXFR) | 하이퍼파라미터 분석과 2,350만 파라미터 백본과의 통제 비교 | PyTorch |
-| 09 | [HFT 기술지표 가속기](https://github.com/chaezhun/HFT_ACCELERATOR) | 고정소수점 SMA/EMA/RSI/MACD/볼린저 파이프라인, 지연 시간 결정성 확보 | Verilog, C, Vivado |
-| 10 | [FPGA 셀프 어텐션 가속기](https://github.com/chaezhun/ATTENTION_ACCELERATOR) | QKᵀ, 소프트맥스, 값 행렬 곱을 Python 골든 모델로 검증 | Verilog, Python |
+### FPGA 가속기
+
+| 프로젝트 | 내용 | 기술 |
+|---|---|---|
+| [YOLOv2 FPGA 가속기](https://github.com/chaezhun/YOLO-ACCELERATOR) | 22개 레이어 객체 탐지기를 Artix-7 한 장에서 처음부터 끝까지 추론 | Verilog, Vivado, MicroBlaze |
+| [HFT 기술지표 가속기](https://github.com/chaezhun/HFT_ACCELERATOR) | 고정소수점 SMA/EMA/RSI/MACD/볼린저 파이프라인, 지연 시간 결정성 확보 | Verilog, C, Vivado |
+| [FPGA 셀프 어텐션 가속기](https://github.com/chaezhun/ATTENTION_ACCELERATOR) | QKᵀ, 소프트맥스, 값 행렬 곱을 Python 골든 모델로 검증 | Verilog, Python |
+
+### ASIC·물리설계
+
+| 프로젝트 | 내용 | 기술 |
+|---|---|---|
+| [16×16 행렬 곱셈 ASIC](https://github.com/chaezhun/MATMUL-ASIC) | SRAM 인터페이스 뒤에 붙는 고정소수점 행렬 곱셈기. 사이클당 2 MAC, 버블 없음 | SystemVerilog, Vivado |
+| [CNN 컨볼루션 가속기](https://github.com/chaezhun/CONV_ACCELERATOR) | 3채널 5×5 stride-3 컨볼루션. RTL부터 배치·배선까지 완주 | Verilog, OpenROAD, Nangate45 |
+
+### SoC·버스 IP
+
+| 프로젝트 | 내용 | 기술 |
+|---|---|---|
+| [K-means FPU 가속기](https://github.com/chaezhun/KMEANS_FPU) | IEEE-754 FPU를 APB로 RISC-V 코어에 붙여 소프트웨어 실수 연산을 대체 | Verilog, C, APB |
+| [APB 커스텀 IP](https://github.com/chaezhun/APB_CUSTOM_IP) | 메모리 맵 가속기 두 개 — 바이트 병렬 덧셈, 128비트 SIMD MAC | Verilog, C |
+
+### 임베디드 시스템
+
+| 프로젝트 | 내용 | 기술 |
+|---|---|---|
+| [딸기 선별 시스템](https://github.com/chaezhun/STAWBERRY_SORTING) | 이종 보드 3대를 CAN과 IPC로 묶어 숙도별로 선별 | C, Python, CAN, FreeRTOS |
+| [스마트 그늘막](https://github.com/chaezhun/SMART_SUNSHADE) | 해를 따라 움직이고 바람이 세지면 스스로 접히는 공공 그늘막 | Arduino, ESP8266 |
+
+### 딥러닝
+
+| 프로젝트 | 내용 | 기술 |
+|---|---|---|
+| [MNIST / ResNet50 전이학습](https://github.com/chaezhun/MNIST_RESNET50_TXFR) | 하이퍼파라미터 분석과 2,350만 파라미터 백본과의 통제 비교 | PyTorch |
 
 ### 핵심 결과
 
 | 프로젝트 | 결과 |
 |---|---|
-| 01 YOLOv2 | 22개 레이어 전체를 Artix-7 한 장에서 추론. C 레퍼런스와 레이어 단위 **0 mismatch** |
-| 02 행렬곱 ASIC | **2,051 사이클 중 2,048 사이클 가동**(99.85%), 정답 256개 전부 일치 |
-| 03 컨볼루션 | 채점 면적 **295,842 → 106,234 µm²** (2.8배), 종합 점수 41.3 → 33.1 |
-| 05 K-means FPU | 보드 실측 **187.75 ms → 60.02 ms** (3.13배) |
-| 07 딸기 선별 | 보드 3대·프로토콜 3종을 명령 하나로. 초당 2프레임에서 **딸기 1개당 정확히 1회 동작** |
-| 08 전이학습 | **학습 파라미터 4,098개(0.017%)로 100%**, 전체 2,350만 개 학습은 66.67% |
-| 09 HFT | 주가 7,700배 차이에도 **지연 890 ns 동일**. 33 → 100 MHz, 타이밍 위반 0건 |
-| 10 어텐션 | 어텐션 헤드 전체를 **118.2 MHz, 칩 자원 약 10%** 로. 출력 1,024개 보드 검증 |
+| YOLOv2 | 22개 레이어 전체를 Artix-7 한 장에서 추론. C 레퍼런스와 레이어 단위 **0 mismatch** |
+| HFT | 주가 7,700배 차이에도 **지연 890 ns 동일**. 33 → 100 MHz, 타이밍 위반 0건 |
+| 어텐션 | 어텐션 헤드 전체를 **118.2 MHz, 칩 자원 약 10%** 로. 출력 1,024개 보드 검증 |
+| 행렬곱 ASIC | **2,051 사이클 중 2,048 사이클 가동**(99.85%), 정답 256개 전부 일치 |
+| 컨볼루션 | 채점 면적 **295,842 → 106,234 µm²** (2.8배), 종합 점수 41.3 → 33.1 |
+| K-means FPU | 보드 실측 **187.75 ms → 60.02 ms** (3.13배) |
+| 딸기 선별 | 보드 3대·프로토콜 3종을 명령 하나로. 초당 2프레임에서 **딸기 1개당 정확히 1회 동작** |
+| 전이학습 | **학습 파라미터 4,098개(0.017%)로 100%**, 전체 2,350만 개 학습은 66.67% |
 
 ## 🏅 Awards
 
@@ -111,13 +133,13 @@
 과정에서 진짜 버그가 드러난다** — 부호 처리, 패킹 순서, 반올림 방향 같은 것들이다.
 
 **반복해서 나온 반올림과 부호 문제.** Verilog `>>>`는 −∞ 방향으로, C의 나눗셈은 0 방향으로
-반올림한다. 음수가 남는 레이어에서는 음수 픽셀마다 1 LSB씩 어긋나고, `01`과 `09`의 디버깅
-상당 부분이 여기서 나왔다. 부호 있는 값을 부호 없는 것으로 읽던 문제도 마찬가지로, 결과가
+반올림한다. 음수가 남는 레이어에서는 음수 픽셀마다 1 LSB씩 어긋나고, YOLO와 HFT 가속기의
+디버깅 상당 부분이 여기서 나왔다. 부호 있는 값을 부호 없는 것으로 읽던 문제도 마찬가지로, 결과가
 그럴듯해 보여서 레퍼런스 없이는 발견되지 않았을 종류였다.
 
-**직관이 아니라 채점식에 맞춘 설계.** 이 중 두 프로젝트는 공식으로 채점된다. `01`은 에너지가
-분모에 있어서 연산기를 늘려 fps를 올리면 오히려 점수를 잃는다. 그래서 144-MAC 예산을 고정하고
-1×1 컨볼루션이 3×3 커널을 그대로 재사용한다. `03`은 기준 전력이 워낙 작아 전력 항이 총점을
+**직관이 아니라 채점식에 맞춘 설계.** 이 중 두 프로젝트는 공식으로 채점된다. YOLO 가속기는
+에너지가 분모에 있어서 연산기를 늘려 fps를 올리면 오히려 점수를 잃는다. 그래서 144-MAC 예산을
+고정하고 1×1 컨볼루션이 3×3 커널을 그대로 재사용한다. 컨볼루션 가속기는 기준 전력이 워낙 작아 전력 항이 총점을
 143배로 증폭하고 있었는데, 이건 공식의 가중치를 읽어서가 아니라 **기준 설계를 직접 측정해야**
 보이는 것이었다.
 
