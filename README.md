@@ -105,29 +105,6 @@ Military service 2023.03 – 2024.09.
 
 ---
 
-## What I focus on
-
-**Bit-exact verification.** The accelerators here were not checked by eye — they were compared
-against a software reference. The YOLO engine matches layer by layer from L0 to L20 with zero
-mismatches, the matrix multiply ASIC matches all 256 golden values, and the convolution
-accelerator matches 1024/1024 on each of three filters. **The real bugs surface on the way to
-zero** — sign handling, packing order, rounding direction.
-
-**Rounding and sign, again and again.** Verilog `>>>` rounds toward −∞ while C division rounds
-toward zero. On layers where negative values survive, that is a one-LSB error on every negative
-pixel, and much of the debugging in `01` and `09` came from exactly this. Reading signed values
-as unsigned was the same kind of problem: the results looked plausible, so nothing but a
-reference would have caught it.
-
-**Designing for the scoring formula, not for intuition.** Two of these projects are graded by a
-formula. In `01` energy sits in the denominator, so buying frames per second with more
-multipliers loses points — hence a fixed 144-MAC budget with 1×1 convolution reusing the 3×3
-kernel. In `03` the reference power was so small that the power term amplified the total by
-143×, and that was only visible by **measuring the reference design**, not by reading the
-weights in the formula.
-
----
-
 *Each repository ships English and Korean READMEs. Files marked as distributed material in a
 repository were provided by a course or competition and are included only so the project builds;
 check their original licence before reuse. Everything else is my own work, and team projects
