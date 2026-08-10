@@ -127,6 +127,7 @@ Military service 2023.03 – 2024.09.
 
 ---
 
+<<<<<<< HEAD
 ## What I focus on
 
 **Bit-exact verification.** The accelerators here were not checked by eye — they were compared
@@ -150,6 +151,8 @@ weights in the formula.
 
 ---
 
+=======
+>>>>>>> 5de11c247ece5fad467ea3f2c98ee5216492ff2b
 *Each repository ships English and Korean READMEs. Files marked as distributed material in a
 repository were provided by a course or competition and are included only so the project builds;
 check their original licence before reuse. Everything else is my own work, and team projects
