@@ -109,10 +109,16 @@
 | **하드웨어** | AXI4 / AXI4-Lite / APB, CAN, UART, I2C, DMA, FSM 설계, 파이프라이닝, 타이밍 클로저 |
 | **플랫폼** | Artix-7 (Nexys A7), MicroBlaze, RISC-V SoC, FreeRTOS, Arduino / ESP8266 |
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=chaezhun&layout=compact&langs_count=6&card_width=340&hide_border=true&bg_color=00000000&title_color=58a6ff&text_color=c9d1d9">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=chaezhun&layout=compact&langs_count=6&card_width=340&hide_border=true&bg_color=00000000&title_color=0969da&text_color=1f2328" alt="Top languages">
-</picture>
+**Top languages** — 위 저장소들의 소스 바이트 기준
+
+```text
+Verilog        █████████████████░░░░░░░░░░░░░  57%
+C              ████████░░░░░░░░░░░░░░░░░░░░░░  26%
+Python         ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░   7%
+Tcl            ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░   5%
+C++            █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   2%
+SystemVerilog  █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   2%
+```
 
 **Most used topics** — `verilog` · `fpga` · `rtl` · `asic` · `risc-v` · `fixed-point` · `embedded` · `pytorch`
 
@@ -122,26 +128,6 @@
 |---|---|---|
 | TOEIC | 910점 (LC 475 / RC 435) | 2024.12 |
 | 제2종 보통 운전면허 | — | 2021.07 |
-
----
-
-## 눈여겨볼 부분
-
-**비트 단위 검증.** 여기 있는 가속기는 눈으로 확인한 것이 아니라 소프트웨어 레퍼런스와
-맞대본 것이다. YOLO 엔진은 L0부터 L20까지 레이어 단위로 대조해 0 mismatch, 행렬 곱셈 ASIC은
-정답 256개 전부 일치, 컨볼루션 가속기는 필터 3종 각각 1024/1024 일치다. **0에 도달하는
-과정에서 진짜 버그가 드러난다** — 부호 처리, 패킹 순서, 반올림 방향 같은 것들이다.
-
-**반복해서 나온 반올림과 부호 문제.** Verilog `>>>`는 −∞ 방향으로, C의 나눗셈은 0 방향으로
-반올림한다. 음수가 남는 레이어에서는 음수 픽셀마다 1 LSB씩 어긋나고, YOLO와 HFT 가속기의
-디버깅 상당 부분이 여기서 나왔다. 부호 있는 값을 부호 없는 것으로 읽던 문제도 마찬가지로, 결과가
-그럴듯해 보여서 레퍼런스 없이는 발견되지 않았을 종류였다.
-
-**직관이 아니라 채점식에 맞춘 설계.** 이 중 두 프로젝트는 공식으로 채점된다. YOLO 가속기는
-에너지가 분모에 있어서 연산기를 늘려 fps를 올리면 오히려 점수를 잃는다. 그래서 144-MAC 예산을
-고정하고 1×1 컨볼루션이 3×3 커널을 그대로 재사용한다. 컨볼루션 가속기는 기준 전력이 워낙 작아 전력 항이 총점을
-143배로 증폭하고 있었는데, 이건 공식의 가중치를 읽어서가 아니라 **기준 설계를 직접 측정해야**
-보이는 것이었다.
 
 ---
 

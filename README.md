@@ -111,10 +111,16 @@ Military service 2023.03 – 2024.09.
 | **Hardware** | AXI4 / AXI4-Lite / APB, CAN, UART, I2C, DMA, FSM design, pipelining, timing closure |
 | **Platforms** | Artix-7 (Nexys A7), MicroBlaze, RISC-V SoC, FreeRTOS, Arduino / ESP8266 |
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=chaezhun&layout=compact&langs_count=6&card_width=340&hide_border=true&bg_color=00000000&title_color=58a6ff&text_color=c9d1d9">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=chaezhun&layout=compact&langs_count=6&card_width=340&hide_border=true&bg_color=00000000&title_color=0969da&text_color=1f2328" alt="Top languages">
-</picture>
+**Top languages** — by source bytes across the repositories above
+
+```text
+Verilog        █████████████████░░░░░░░░░░░░░  57%
+C              ████████░░░░░░░░░░░░░░░░░░░░░░  26%
+Python         ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░   7%
+Tcl            ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░   5%
+C++            █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   2%
+SystemVerilog  █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   2%
+```
 
 **Most used topics** — `verilog` · `fpga` · `rtl` · `asic` · `risc-v` · `fixed-point` · `embedded` · `pytorch`
 
@@ -127,32 +133,6 @@ Military service 2023.03 – 2024.09.
 
 ---
 
-<<<<<<< HEAD
-## What I focus on
-
-**Bit-exact verification.** The accelerators here were not checked by eye — they were compared
-against a software reference. The YOLO engine matches layer by layer from L0 to L20 with zero
-mismatches, the matrix multiply ASIC matches all 256 golden values, and the convolution
-accelerator matches 1024/1024 on each of three filters. **The real bugs surface on the way to
-zero** — sign handling, packing order, rounding direction.
-
-**Rounding and sign, again and again.** Verilog `>>>` rounds toward −∞ while C division rounds
-toward zero. On layers where negative values survive, that is a one-LSB error on every negative
-pixel, and much of the debugging in the YOLO and HFT accelerators came from exactly this. Reading signed values
-as unsigned was the same kind of problem: the results looked plausible, so nothing but a
-reference would have caught it.
-
-**Designing for the scoring formula, not for intuition.** Two of these projects are graded by a
-formula. In the YOLO accelerator energy sits in the denominator, so buying frames per second with
-more multipliers loses points — hence a fixed 144-MAC budget with 1×1 convolution reusing the 3×3
-kernel. In the convolution accelerator the reference power was so small that the power term amplified the total by
-143×, and that was only visible by **measuring the reference design**, not by reading the
-weights in the formula.
-
----
-
-=======
->>>>>>> 5de11c247ece5fad467ea3f2c98ee5216492ff2b
 *Each repository ships English and Korean READMEs. Files marked as distributed material in a
 repository were provided by a course or competition and are included only so the project builds;
 check their original licence before reuse. Everything else is my own work, and team projects
