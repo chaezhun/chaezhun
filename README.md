@@ -29,8 +29,8 @@ Military service 2023.03 – 2024.09.
 
 | Role | Institution | Period |
 |---|---|---|
-| Undergraduate Research Intern | Seoul National University, Dept. of Electrical and Computer Engineering | 2026.07 – present |
-| Undergraduate Research Intern | Chung-Ang University, School of Electrical and Electronics Engineering | 2026.03 – present |
+| Undergraduate Research Intern | Seoul National University, Dept. of Electrical and Computer Engineering | 2026.06 – 2026.07 |
+| Undergraduate Research Intern | Chung-Ang University, School of Electrical and Electronics Engineering | 2026.03 – 2026.06 |
 
 ## 📝 Projects
 
