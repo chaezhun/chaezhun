@@ -87,6 +87,13 @@
 | **하드웨어** | AXI4 / AXI4-Lite / APB, CAN, UART, I2C, DMA, FSM 설계, 파이프라이닝, 타이밍 클로저 |
 | **플랫폼** | Artix-7 (Nexys A7), MicroBlaze, RISC-V SoC, FreeRTOS, Arduino / ESP8266 |
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=chaezhun&layout=compact&langs_count=6&card_width=340&hide_border=true&bg_color=00000000&title_color=58a6ff&text_color=c9d1d9">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=chaezhun&layout=compact&langs_count=6&card_width=340&hide_border=true&bg_color=00000000&title_color=0969da&text_color=1f2328" alt="Top languages">
+</picture>
+
+**Most used topics** — `verilog` · `fpga` · `rtl` · `asic` · `risc-v` · `fixed-point` · `embedded` · `pytorch`
+
 ## 📜 Certificates
 
 | 자격 | 점수·등급 | 취득 |
