@@ -36,16 +36,16 @@ Military service 2023.03 – 2024.09.
 
 | | Project | What it is | Stack |
 |---|---|---|---|
-| 01 | [YOLOv2 FPGA Accelerator](https://github.com/chaezhun/yolo-fpga-accelerator) | A 22-layer object detector inferring end to end on a single Artix-7 | Verilog, Vivado, MicroBlaze |
-| 02 | [16×16 Matrix Multiply ASIC](https://github.com/chaezhun/matmul16x16-asic) | Fixed-point matrix multiplier behind an SRAM interface, two MACs per cycle, no bubbles | SystemVerilog, Vivado |
-| 03 | [CNN Convolution Accelerator](https://github.com/chaezhun/conv-accelerator-rtl) | Three-channel 5×5 stride-3 convolution taken from RTL to place-and-route | Verilog, OpenROAD, Nangate45 |
-| 04 | [Smart Sunshade](https://github.com/chaezhun/smart-sunshade) | A public sunshade that tracks the sun and folds itself in wind | Arduino, ESP8266 |
-| 05 | [K-means FPU Accelerator](https://github.com/chaezhun/kmeans-fpu-accelerator) | IEEE-754 FPU on APB replacing the software float path of a RISC-V core | Verilog, C, APB |
-| 06 | [APB Custom IP](https://github.com/chaezhun/apb-custom-ip) | Two memory-mapped accelerators — byte-parallel addition and a 128-bit SIMD MAC | Verilog, C |
-| 07 | [Strawberry Sorting System](https://github.com/chaezhun/strawberry-sorting) | Three heterogeneous boards tied into one line over CAN and IPC | C, Python, CAN, FreeRTOS |
-| 08 | [MNIST / ResNet50 Transfer](https://github.com/chaezhun/mnist-resnet50-transfer) | Hyperparameter analysis and a controlled comparison against a 23.5M-parameter backbone | PyTorch |
-| 09 | [HFT Indicator Accelerator](https://github.com/chaezhun/hft-fpga-accelerator) | Fixed-point SMA/EMA/RSI/MACD/Bollinger pipeline with deterministic latency | Verilog, C, Vivado |
-| 10 | [FPGA Self-Attention Accelerator](https://github.com/chaezhun/fpga-attention-accelerator) | QKᵀ, softmax and the value multiply verified against a Python golden model | Verilog, Python |
+| 01 | [YOLOv2 FPGA Accelerator](https://github.com/chaezhun/YOLO-ACCELERATOR) | A 22-layer object detector inferring end to end on a single Artix-7 | Verilog, Vivado, MicroBlaze |
+| 02 | [16×16 Matrix Multiply ASIC](https://github.com/chaezhun/MATMUL-ASIC) | Fixed-point matrix multiplier behind an SRAM interface, two MACs per cycle, no bubbles | SystemVerilog, Vivado |
+| 03 | [CNN Convolution Accelerator](https://github.com/chaezhun/CONV_ACCELERATOR) | Three-channel 5×5 stride-3 convolution taken from RTL to place-and-route | Verilog, OpenROAD, Nangate45 |
+| 04 | [Smart Sunshade](https://github.com/chaezhun/SMART_SUNSHADE) | A public sunshade that tracks the sun and folds itself in wind | Arduino, ESP8266 |
+| 05 | [K-means FPU Accelerator](https://github.com/chaezhun/KMEANS_FPU) | IEEE-754 FPU on APB replacing the software float path of a RISC-V core | Verilog, C, APB |
+| 06 | [APB Custom IP](https://github.com/chaezhun/APB_CUSTOM_IP) | Two memory-mapped accelerators — byte-parallel addition and a 128-bit SIMD MAC | Verilog, C |
+| 07 | [Strawberry Sorting System](https://github.com/chaezhun/STAWBERRY_SORTING) | Three heterogeneous boards tied into one line over CAN and IPC | C, Python, CAN, FreeRTOS |
+| 08 | [MNIST / ResNet50 Transfer](https://github.com/chaezhun/MNIST_RESNET50_TXFR) | Hyperparameter analysis and a controlled comparison against a 23.5M-parameter backbone | PyTorch |
+| 09 | [HFT Indicator Accelerator](https://github.com/chaezhun/HFT_ACCELERATOR) | Fixed-point SMA/EMA/RSI/MACD/Bollinger pipeline with deterministic latency | Verilog, C, Vivado |
+| 10 | [FPGA Self-Attention Accelerator](https://github.com/chaezhun/ATTENTION_ACCELERATOR) | QKᵀ, softmax and the value multiply verified against a Python golden model | Verilog, Python |
 
 ### Results at a glance
 

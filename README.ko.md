@@ -35,16 +35,16 @@
 
 | | 프로젝트 | 내용 | 기술 |
 |---|---|---|---|
-| 01 | [YOLOv2 FPGA 가속기](https://github.com/chaezhun/yolo-fpga-accelerator) | 22개 레이어 객체 탐지기를 Artix-7 한 장에서 처음부터 끝까지 추론 | Verilog, Vivado, MicroBlaze |
-| 02 | [16×16 행렬 곱셈 ASIC](https://github.com/chaezhun/matmul16x16-asic) | SRAM 인터페이스 뒤에 붙는 고정소수점 행렬 곱셈기. 사이클당 2 MAC, 버블 없음 | SystemVerilog, Vivado |
-| 03 | [CNN 컨볼루션 가속기](https://github.com/chaezhun/conv-accelerator-rtl) | 3채널 5×5 stride-3 컨볼루션. RTL부터 배치·배선까지 완주 | Verilog, OpenROAD, Nangate45 |
-| 04 | [스마트 그늘막](https://github.com/chaezhun/smart-sunshade) | 해를 따라 움직이고 바람이 세지면 스스로 접히는 공공 그늘막 | Arduino, ESP8266 |
-| 05 | [K-means FPU 가속기](https://github.com/chaezhun/kmeans-fpu-accelerator) | IEEE-754 FPU를 APB로 RISC-V 코어에 붙여 소프트웨어 실수 연산을 대체 | Verilog, C, APB |
-| 06 | [APB 커스텀 IP](https://github.com/chaezhun/apb-custom-ip) | 메모리 맵 가속기 두 개 — 바이트 병렬 덧셈, 128비트 SIMD MAC | Verilog, C |
-| 07 | [딸기 선별 시스템](https://github.com/chaezhun/strawberry-sorting) | 이종 보드 3대를 CAN과 IPC로 묶어 숙도별로 선별 | C, Python, CAN, FreeRTOS |
-| 08 | [MNIST / ResNet50 전이학습](https://github.com/chaezhun/mnist-resnet50-transfer) | 하이퍼파라미터 분석과 2,350만 파라미터 백본과의 통제 비교 | PyTorch |
-| 09 | [HFT 기술지표 가속기](https://github.com/chaezhun/hft-fpga-accelerator) | 고정소수점 SMA/EMA/RSI/MACD/볼린저 파이프라인, 지연 시간 결정성 확보 | Verilog, C, Vivado |
-| 10 | [FPGA 셀프 어텐션 가속기](https://github.com/chaezhun/fpga-attention-accelerator) | QKᵀ, 소프트맥스, 값 행렬 곱을 Python 골든 모델로 검증 | Verilog, Python |
+| 01 | [YOLOv2 FPGA 가속기](https://github.com/chaezhun/YOLO-ACCELERATOR) | 22개 레이어 객체 탐지기를 Artix-7 한 장에서 처음부터 끝까지 추론 | Verilog, Vivado, MicroBlaze |
+| 02 | [16×16 행렬 곱셈 ASIC](https://github.com/chaezhun/MATMUL-ASIC) | SRAM 인터페이스 뒤에 붙는 고정소수점 행렬 곱셈기. 사이클당 2 MAC, 버블 없음 | SystemVerilog, Vivado |
+| 03 | [CNN 컨볼루션 가속기](https://github.com/chaezhun/CONV_ACCELERATOR) | 3채널 5×5 stride-3 컨볼루션. RTL부터 배치·배선까지 완주 | Verilog, OpenROAD, Nangate45 |
+| 04 | [스마트 그늘막](https://github.com/chaezhun/SMART_SUNSHADE) | 해를 따라 움직이고 바람이 세지면 스스로 접히는 공공 그늘막 | Arduino, ESP8266 |
+| 05 | [K-means FPU 가속기](https://github.com/chaezhun/KMEANS_FPU) | IEEE-754 FPU를 APB로 RISC-V 코어에 붙여 소프트웨어 실수 연산을 대체 | Verilog, C, APB |
+| 06 | [APB 커스텀 IP](https://github.com/chaezhun/APB_CUSTOM_IP) | 메모리 맵 가속기 두 개 — 바이트 병렬 덧셈, 128비트 SIMD MAC | Verilog, C |
+| 07 | [딸기 선별 시스템](https://github.com/chaezhun/STAWBERRY_SORTING) | 이종 보드 3대를 CAN과 IPC로 묶어 숙도별로 선별 | C, Python, CAN, FreeRTOS |
+| 08 | [MNIST / ResNet50 전이학습](https://github.com/chaezhun/MNIST_RESNET50_TXFR) | 하이퍼파라미터 분석과 2,350만 파라미터 백본과의 통제 비교 | PyTorch |
+| 09 | [HFT 기술지표 가속기](https://github.com/chaezhun/HFT_ACCELERATOR) | 고정소수점 SMA/EMA/RSI/MACD/볼린저 파이프라인, 지연 시간 결정성 확보 | Verilog, C, Vivado |
+| 10 | [FPGA 셀프 어텐션 가속기](https://github.com/chaezhun/ATTENTION_ACCELERATOR) | QKᵀ, 소프트맥스, 값 행렬 곱을 Python 골든 모델로 검증 | Verilog, Python |
 
 ### 핵심 결과
 
