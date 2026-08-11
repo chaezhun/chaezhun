@@ -77,7 +77,7 @@ Military service 2023.03 – 2024.09.
 | HFT | **890 ns latency regardless of a 7,700× price range**; 33 → 100 MHz, zero timing violations |
 | Attention | a full attention head at **118.2 MHz using ~10% of the device**, 1,024 outputs verified on board |
 | Matmul ASIC | **2,048 of 2,051 cycles active** (99.85%), all 256 golden values matched |
-| Convolution | scored area **295,842 → 106,234 µm²** (2.8×), total score 41.3 → 33.1 |
+| Convolution | scored area **295,842 → 106,234 µm²** (2.8×), score 41.3 → 33.1; physical implementation signed off with **+0.10 ns worst-path slack and zero DRC** at 1 GHz |
 | K-means FPU | **187.75 ms → 60.02 ms** (3.13×) measured on the board |
 | Strawberry sorting | three boards and three protocols behind one command; **exactly one actuation per strawberry** at 2 fps |
 | Transfer learning | **100% from 4,098 trained parameters (0.017%)**; training all 23.5M gave 66.67% |
