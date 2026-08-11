@@ -26,10 +26,10 @@
 
 ## 👩‍🔬 Research Experience
 
-| 역할 | 소속 | 기간 |
-|---|---|---|
-| 학부생 연구 인턴 | 서울대학교 전기·정보공학부 | 2026.06 – 2026.07 |
-| 학부생 연구 인턴 | 서울대학교 전기·정보공학부 | 2026.03 – 2026.06 |
+| 역할 | 소속 | 주제 | 기간 |
+|---|---|---|---|
+| 하계 학부연구 인턴 | 서울대학교 전기·정보공학부 | FPGA 셀프 어텐션 가속기 (정수 연산만으로 QKᵀ·소프트맥스·×V) | 2026.06 – 2026.07 |
+| 학부연구생 | 서울대학교 전기·정보공학부 | 지연 시간이 일정한 FPGA 기술지표 가속기 | 2026.03 – 2026.06 |
 
 ## 📝 Projects
 
@@ -37,8 +37,8 @@
 
 | 프로젝트 | 내용 | 기술 |
 |---|---|---|
-| [YOLOv2 FPGA 가속기](https://github.com/chaezhun/YOLO-ACCELERATOR) | 22개 레이어 객체 탐지기를 Artix-7 한 장에서 처음부터 끝까지 추론 | Verilog, Vivado, MicroBlaze |
-| [HFT 기술지표 가속기](https://github.com/chaezhun/HFT_ACCELERATOR) | 고정소수점 SMA/EMA/RSI/MACD/볼린저 파이프라인, 지연 시간 결정성 확보 | Verilog, C, Vivado |
+| [YOLOv2 FPGA 가속기](https://github.com/chaezhun/YOLO-ACCELERATOR) | 22개 레이어 객체 탐지기를 Artix-7 한 장에. 레이어 단위 전 구간 검증 | Verilog, Vivado, MicroBlaze |
+| [HFT 기술지표 가속기](https://github.com/chaezhun/HFT_ACCELERATOR) | 볼린저·MACD·RSI를 하나의 매매 결정으로 융합, 지연 시간 고정 | Verilog, C, Vivado |
 | [FPGA 셀프 어텐션 가속기](https://github.com/chaezhun/ATTENTION_ACCELERATOR) | QKᵀ, 소프트맥스, 값 행렬 곱을 Python 골든 모델로 검증 | Verilog, Python |
 
 ### ASIC·물리설계
@@ -59,7 +59,7 @@
 
 | 프로젝트 | 내용 | 기술 |
 |---|---|---|
-| [딸기 선별 시스템](https://github.com/chaezhun/STAWBERRY_SORTING) | 이종 보드 3대를 CAN과 IPC로 묶어 숙도별로 선별 | C, Python, CAN, FreeRTOS |
+| [딸기 선별 시스템](https://github.com/chaezhun/STRAWBERRY_SORTING) | 이종 보드 3대를 CAN과 IPC로 묶어 숙도별로 선별 | C, Python, CAN, FreeRTOS |
 | [스마트 그늘막](https://github.com/chaezhun/SMART_SUNSHADE) | 해를 따라 움직이고 바람이 세지면 스스로 접히는 공공 그늘막 | Arduino, ESP8266 |
 
 ### 딥러닝
@@ -72,7 +72,7 @@
 
 | 프로젝트 | 결과 |
 |---|---|
-| YOLOv2 | 22개 레이어 전체를 Artix-7 한 장에서 추론. C 레퍼런스와 레이어 단위 **0 mismatch** |
+| YOLOv2 | 22개 레이어 전체를 Artix-7 한 장에. C 레퍼런스와 레이어 단위 **0 mismatch**, 81.25 MHz WNS −0.18 ns |
 | HFT | 주가 7,700배 차이에도 **지연 890 ns 동일**. 33 → 100 MHz, 타이밍 위반 0건 |
 | 어텐션 | 어텐션 헤드 전체를 **118.2 MHz, 칩 자원 약 10%** 로. 출력 1,024개 보드 검증 |
 | 행렬곱 ASIC | **2,051 사이클 중 2,048 사이클 가동**(99.85%), 정답 256개 전부 일치 |

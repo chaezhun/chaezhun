@@ -27,10 +27,10 @@ Military service 2023.03 – 2024.09.
 
 ## 👩‍🔬 Research Experience
 
-| Role | Institution | Period |
-|---|---|---|
-| Undergraduate Research Intern | Seoul National University, Dept. of Electrical and Computer Engineering | 2026.06 – 2026.07 |
-| Undergraduate Research Intern | Seoul National University, Dept. of Electrical and Computer Engineering | 2026.03 – 2026.06 |
+| Role | Institution | Topic | Period |
+|---|---|---|---|
+| Summer Research Intern | Seoul National University, Dept. of Electrical and Computer Engineering | FPGA self-attention accelerator (integer-only QKᵀ, softmax, ×V) | 2026.06 – 2026.07 |
+| Undergraduate Researcher | Seoul National University, Dept. of Electrical and Computer Engineering | FPGA technical-indicator accelerator with deterministic latency | 2026.03 – 2026.06 |
 
 ## 📝 Projects
 
@@ -38,8 +38,8 @@ Military service 2023.03 – 2024.09.
 
 | Project | What it is | Stack |
 |---|---|---|
-| [YOLOv2 FPGA Accelerator](https://github.com/chaezhun/YOLO-ACCELERATOR) | A 22-layer object detector inferring end to end on a single Artix-7 | Verilog, Vivado, MicroBlaze |
-| [HFT Indicator Accelerator](https://github.com/chaezhun/HFT_ACCELERATOR) | Fixed-point SMA/EMA/RSI/MACD/Bollinger pipeline with deterministic latency | Verilog, C, Vivado |
+| [YOLOv2 FPGA Accelerator](https://github.com/chaezhun/YOLO-ACCELERATOR) | A 22-layer object detector fitted onto a single Artix-7, verified layer by layer | Verilog, Vivado, MicroBlaze |
+| [HFT Indicator Accelerator](https://github.com/chaezhun/HFT_ACCELERATOR) | Bollinger, MACD and RSI fused into one trading decision at fixed latency | Verilog, C, Vivado |
 | [FPGA Self-Attention Accelerator](https://github.com/chaezhun/ATTENTION_ACCELERATOR) | QKᵀ, softmax and the value multiply verified against a Python golden model | Verilog, Python |
 
 ### ASIC & Physical Design
@@ -60,7 +60,7 @@ Military service 2023.03 – 2024.09.
 
 | Project | What it is | Stack |
 |---|---|---|
-| [Strawberry Sorting System](https://github.com/chaezhun/STAWBERRY_SORTING) | Three heterogeneous boards tied into one line over CAN and IPC | C, Python, CAN, FreeRTOS |
+| [Strawberry Sorting System](https://github.com/chaezhun/STRAWBERRY_SORTING) | Three heterogeneous boards tied into one line over CAN and IPC | C, Python, CAN, FreeRTOS |
 | [Smart Sunshade](https://github.com/chaezhun/SMART_SUNSHADE) | A public sunshade that tracks the sun and folds itself in wind | Arduino, ESP8266 |
 
 ### Deep Learning
@@ -73,7 +73,7 @@ Military service 2023.03 – 2024.09.
 
 | Project | Result |
 |---|---|
-| YOLOv2 | all 22 layers inferring on one Artix-7, **0 mismatch** against the C reference layer by layer |
+| YOLOv2 | all 22 layers on one Artix-7, **0 mismatch** against the C reference layer by layer; WNS −0.18 ns at 81.25 MHz |
 | HFT | **890 ns latency regardless of a 7,700× price range**; 33 → 100 MHz, zero timing violations |
 | Attention | a full attention head at **118.2 MHz using ~10% of the device**, 1,024 outputs verified on board |
 | Matmul ASIC | **2,048 of 2,051 cycles active** (99.85%), all 256 golden values matched |
