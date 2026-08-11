@@ -46,7 +46,7 @@ Military service 2023.03 – 2024.09.
 
 | Project | What it is | Stack |
 |---|---|---|
-| [16×16 Matrix Multiply ASIC](https://github.com/chaezhun/MATMUL-ASIC) | Fixed-point matrix multiplier behind an SRAM interface, two MACs per cycle, no bubbles | SystemVerilog, Vivado |
+| [16×16 Matrix Multiply ASIC](https://github.com/chaezhun/MATMUL-ASIC) | Fixed-point matrix multiplier behind an SRAM interface, two MACs per cycle, no bubbles | Verilog, Vivado |
 | [CNN Convolution Accelerator](https://github.com/chaezhun/CONV_ACCELERATOR) | Three-channel 5×5 stride-3 convolution taken from RTL to place-and-route | Verilog, OpenROAD, Nangate45 |
 
 ### SoC & Bus IP
@@ -98,14 +98,13 @@ Military service 2023.03 – 2024.09.
 ## ⚒ Tech Skills
 
 ![Verilog](https://img.shields.io/badge/Verilog-1A1A1A?style=flat-square&logoColor=white)
-![SystemVerilog](https://img.shields.io/badge/SystemVerilog-1A1A1A?style=flat-square&logoColor=white)
 ![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 
 | | |
 |---|---|
-| **Languages** | **Verilog**, SystemVerilog · **C**, C++ · **Python** (PyTorch, NumPy) · shell |
+| **Languages** | **Verilog** · **C**, C++ · **Python** (PyTorch, NumPy) · shell |
 | **Environment** | **Linux** (Ubuntu, Yocto, WSL), Git, Makefile |
 | **EDA** | Vivado, Questa / ModelSim, NCverilog, OpenROAD, Icarus |
 | **Hardware** | AXI4 / AXI4-Lite / APB, CAN, UART, I2C, DMA, FSM design, pipelining, timing closure |
@@ -119,7 +118,6 @@ C              ████████░░░░░░░░░░░░░�
 Python         ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░   7%
 Tcl            ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░   5%
 C++            █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   2%
-SystemVerilog  █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   2%
 ```
 
 **Most used topics** — `verilog` · `fpga` · `rtl` · `asic` · `risc-v` · `fixed-point` · `embedded` · `pytorch`

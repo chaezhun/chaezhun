@@ -45,7 +45,7 @@
 
 | 프로젝트 | 내용 | 기술 |
 |---|---|---|
-| [16×16 행렬 곱셈 ASIC](https://github.com/chaezhun/MATMUL-ASIC) | SRAM 인터페이스 뒤에 붙는 고정소수점 행렬 곱셈기. 사이클당 2 MAC, 버블 없음 | SystemVerilog, Vivado |
+| [16×16 행렬 곱셈 ASIC](https://github.com/chaezhun/MATMUL-ASIC) | SRAM 인터페이스 뒤에 붙는 고정소수점 행렬 곱셈기. 사이클당 2 MAC, 버블 없음 | Verilog, Vivado |
 | [CNN 컨볼루션 가속기](https://github.com/chaezhun/CONV_ACCELERATOR) | 3채널 5×5 stride-3 컨볼루션. RTL부터 배치·배선까지 완주 | Verilog, OpenROAD, Nangate45 |
 
 ### SoC·버스 IP
@@ -96,14 +96,13 @@
 ## ⚒ Tech Skills
 
 ![Verilog](https://img.shields.io/badge/Verilog-1A1A1A?style=flat-square&logoColor=white)
-![SystemVerilog](https://img.shields.io/badge/SystemVerilog-1A1A1A?style=flat-square&logoColor=white)
 ![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 
 | | |
 |---|---|
-| **언어** | **Verilog**, SystemVerilog · **C**, C++ · **Python** (PyTorch, NumPy) · 셸 스크립트 |
+| **언어** | **Verilog** · **C**, C++ · **Python** (PyTorch, NumPy) · 셸 스크립트 |
 | **환경** | **Linux** (Ubuntu, Yocto, WSL), Git, Makefile |
 | **EDA** | Vivado, Questa / ModelSim, NCverilog, OpenROAD, Icarus |
 | **하드웨어** | AXI4 / AXI4-Lite / APB, CAN, UART, I2C, DMA, FSM 설계, 파이프라이닝, 타이밍 클로저 |
@@ -117,7 +116,6 @@ C              ████████░░░░░░░░░░░░░�
 Python         ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░   7%
 Tcl            ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░   5%
 C++            █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   2%
-SystemVerilog  █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   2%
 ```
 
 **Most used topics** — `verilog` · `fpga` · `rtl` · `asic` · `risc-v` · `fixed-point` · `embedded` · `pytorch`
