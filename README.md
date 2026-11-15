@@ -4,8 +4,8 @@
 
 Undergraduate in Electrical and Electronics Engineering at Chung-Ang University, graduating
 February 2027. I design digital hardware for AI and signal workloads — convolution engines,
-fixed-point datapaths, and the testbenches that prove they match a software reference bit for
-bit.
+fixed-point datapaths, a lossless KV-cache engine for LLM decoding measured on DDR2, and the
+testbenches that prove they match a software reference bit for bit.
 
 Most of my work sits between the RTL and the system around it: quantisation constants, bus
 interfaces, timing closure, golden-model verification. I have taken a design from Verilog to a
@@ -38,6 +38,7 @@ Military service 2023.03 – 2024.09.
 
 | Project | What it is | Stack |
 |---|---|---|
+| [Lossless KV-Cache Early-Termination Engine](https://github.com/chaezhun/KV_CACHE_ET_ENGINE) | Graduation thesis, team lead. Skips KV-cache DRAM reads in GQA LLM decoding without losing a top-16 token; measured on a board with DDR2 | SystemVerilog, Vivado, Xilinx MIG, Python |
 | [YOLOv2 FPGA Accelerator](https://github.com/chaezhun/YOLO-ACCELERATOR) | A 22-layer object detector fitted onto a single Artix-7, verified layer by layer | Verilog, Vivado, MicroBlaze |
 | [HFT Indicator Accelerator](https://github.com/chaezhun/HFT_ACCELERATOR) | Bollinger, MACD and RSI fused into one trading decision at fixed latency | Verilog, C, Vivado |
 | [FPGA Self-Attention Accelerator](https://github.com/chaezhun/ATTENTION_ACCELERATOR) | QKᵀ, softmax and the value multiply verified against a Python golden model | Verilog, Python |
@@ -73,6 +74,7 @@ Military service 2023.03 – 2024.09.
 
 | Project | Result |
 |---|---|
+| KV-cache engine | on the board with DDR2, K bursts **0.581 of dense** and **identical to the golden model in 22/22 samples**; **3.0× less KV traffic** at a 2K context with zero top-16 loss over 1,280 steps (golden model); **0 DSP**, 48% LUT |
 | YOLOv2 | all 22 layers on one Artix-7, **0 mismatch** against the C reference layer by layer; WNS −0.18 ns at 81.25 MHz |
 | HFT | **890 ns latency regardless of a 7,700× price range**; 33 → 100 MHz, zero timing violations |
 | Attention | a full attention head at **118.2 MHz using ~10% of the device**, 1,024 outputs verified on board |
@@ -98,16 +100,17 @@ Military service 2023.03 – 2024.09.
 ## ⚒ Tech Skills
 
 ![Verilog](https://img.shields.io/badge/Verilog-1A1A1A?style=flat-square&logoColor=white)
+![SystemVerilog](https://img.shields.io/badge/SystemVerilog-3F3F3F?style=flat-square&logoColor=white)
 ![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 
 | | |
 |---|---|
-| **Languages** | **Verilog** · **C**, C++ · **Python** (PyTorch, NumPy) · shell |
+| **Languages** | **Verilog**, SystemVerilog · **C**, C++ · **Python** (PyTorch, NumPy) · shell |
 | **Environment** | **Linux** (Ubuntu, Yocto, WSL), Git, Makefile |
-| **EDA** | Vivado, Questa / ModelSim, NCverilog, OpenROAD, Icarus |
-| **Hardware** | AXI4 / AXI4-Lite / APB, CAN, UART, I2C, DMA, FSM design, pipelining, timing closure |
+| **EDA** | Vivado (incl. xsim, MIG, XADC), Questa / ModelSim, NCverilog, OpenROAD, Icarus |
+| **Hardware** | AXI4 / AXI4-Lite / APB, DDR2 (Xilinx MIG), CAN, UART, I2C, DMA, FSM design, pipelining, timing closure |
 | **Platforms** | Artix-7 (Nexys A7), MicroBlaze, RISC-V SoC, FreeRTOS, Arduino / ESP8266 |
 
 **Top languages** — by source bytes across the repositories above

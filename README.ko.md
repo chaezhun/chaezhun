@@ -3,8 +3,9 @@
 **채지훈** · Jihun Chae
 
 중앙대학교 전자전기공학부 학부생이고 2027년 2월 졸업 예정이다. AI·신호 연산을 위한 디지털
-하드웨어를 설계한다. 컨볼루션 연산기, 고정소수점 데이터패스, 그리고 그것이 소프트웨어
-레퍼런스와 비트 단위로 같다는 것을 증명하는 테스트벤치를 만든다.
+하드웨어를 설계한다. 컨볼루션 연산기, 고정소수점 데이터패스, DDR2 위에서 측정한 LLM 디코딩용
+무손실 KV 캐시 엔진, 그리고 그것이 소프트웨어 레퍼런스와 비트 단위로 같다는 것을 증명하는
+테스트벤치를 만든다.
 
 주로 다루는 영역은 RTL 자체보다 그 주변까지다. 양자화 상수, 버스 인터페이스, 타이밍 클로저,
 골든 모델 검증. Verilog에서 배치·배선을 마친 레이아웃까지, 비트스트림에서 동작하는 보드
@@ -37,6 +38,7 @@
 
 | 프로젝트 | 내용 | 기술 |
 |---|---|---|
+| [무손실 KV 캐시 조기 종단 엔진](https://github.com/chaezhun/KV_CACHE_ET_ENGINE) | 졸업논문, 팀장. GQA LLM 디코딩에서 상위 16개 토큰을 잃지 않고 KV 캐시 DRAM 읽기를 건너뜀. DDR2 보드 실측 | SystemVerilog, Vivado, Xilinx MIG, Python |
 | [YOLOv2 FPGA 가속기](https://github.com/chaezhun/YOLO-ACCELERATOR) | 22개 레이어 객체 탐지기를 Artix-7 한 장에. 레이어 단위 전 구간 검증 | Verilog, Vivado, MicroBlaze |
 | [HFT 기술지표 가속기](https://github.com/chaezhun/HFT_ACCELERATOR) | 볼린저·MACD·RSI를 하나의 매매 결정으로 융합, 지연 시간 고정 | Verilog, C, Vivado |
 | [FPGA 셀프 어텐션 가속기](https://github.com/chaezhun/ATTENTION_ACCELERATOR) | QKᵀ, 소프트맥스, 값 행렬 곱을 Python 골든 모델로 검증 | Verilog, Python |
@@ -72,6 +74,7 @@
 
 | 프로젝트 | 결과 |
 |---|---|
+| KV 캐시 엔진 | DDR2 보드에서 K burst **dense 대비 0.581**, **22개 표본 모두 골든모델과 같음**. 문맥 2K 에서 **KV 트래픽 3.0배 감축**, 1,280 스텝 상위 16개 손실 0 (골든모델). **DSP 0**, LUT 48% |
 | YOLOv2 | 22개 레이어 전체를 Artix-7 한 장에. C 레퍼런스와 레이어 단위 **0 mismatch**, 81.25 MHz WNS −0.18 ns |
 | HFT | 주가 7,700배 차이에도 **지연 890 ns 동일**. 33 → 100 MHz, 타이밍 위반 0건 |
 | 어텐션 | 어텐션 헤드 전체를 **118.2 MHz, 칩 자원 약 10%** 로. 출력 1,024개 보드 검증 |
@@ -96,16 +99,17 @@
 ## ⚒ Tech Skills
 
 ![Verilog](https://img.shields.io/badge/Verilog-1A1A1A?style=flat-square&logoColor=white)
+![SystemVerilog](https://img.shields.io/badge/SystemVerilog-3F3F3F?style=flat-square&logoColor=white)
 ![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 
 | | |
 |---|---|
-| **언어** | **Verilog** · **C**, C++ · **Python** (PyTorch, NumPy) · 셸 스크립트 |
+| **언어** | **Verilog**, SystemVerilog · **C**, C++ · **Python** (PyTorch, NumPy) · 셸 스크립트 |
 | **환경** | **Linux** (Ubuntu, Yocto, WSL), Git, Makefile |
-| **EDA** | Vivado, Questa / ModelSim, NCverilog, OpenROAD, Icarus |
-| **하드웨어** | AXI4 / AXI4-Lite / APB, CAN, UART, I2C, DMA, FSM 설계, 파이프라이닝, 타이밍 클로저 |
+| **EDA** | Vivado (xsim, MIG, XADC 포함), Questa / ModelSim, NCverilog, OpenROAD, Icarus |
+| **하드웨어** | AXI4 / AXI4-Lite / APB, DDR2 (Xilinx MIG), CAN, UART, I2C, DMA, FSM 설계, 파이프라이닝, 타이밍 클로저 |
 | **플랫폼** | Artix-7 (Nexys A7), MicroBlaze, RISC-V SoC, FreeRTOS, Arduino / ESP8266 |
 
 **Top languages** — 위 저장소들의 소스 바이트 기준
