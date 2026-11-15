@@ -116,11 +116,11 @@ Military service 2023.03 – 2024.09.
 **Top languages** — by source bytes across the repositories above
 
 ```text
-Verilog        █████████████████░░░░░░░░░░░░░  57%
-C              ████████░░░░░░░░░░░░░░░░░░░░░░  26%
-Python         ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░   7%
-Tcl            ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░   5%
-C++            █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   2%
+Verilog        ██████████░░░░░░░░░░░░░░░░░░░░  33%
+Python         █████████░░░░░░░░░░░░░░░░░░░░░  31%
+C              ████░░░░░░░░░░░░░░░░░░░░░░░░░░  15%
+SystemVerilog  ███░░░░░░░░░░░░░░░░░░░░░░░░░░░  10%
+Tcl            █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   4%
 ```
 
 **Most used topics** — `verilog` · `fpga` · `rtl` · `asic` · `risc-v` · `fixed-point` · `embedded` · `pytorch`
