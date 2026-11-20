@@ -49,7 +49,7 @@ Military service 2023.03 – 2024.09.
 
 | Project | What it is | Stack |
 |---|---|---|
-| [Pixel-to-World Mapping Accelerator](https://github.com/chaezhun/PIXEL2WORLD_ACCELERATOR) | National AI-semiconductor contest, two-person team. Maps every pixel event of a rotating event camera to world coordinates and accumulates it in an on-chip world memory; 200 MHz in GPDK045 through place-and-route | Verilog, Cadence Genus / Innovus, GPDK045 |
+| [Pixel-to-World Mapping Engine](https://github.com/chaezhun/PIXEL2WORLD_ENGINE) | National AI-semiconductor contest, two-person team. Maps every pixel event of a rotating event camera to world coordinates and accumulates it in an on-chip world memory; 200 MHz in GPDK045 through place-and-route | Verilog, Cadence Genus / Innovus, GPDK045 |
 | [16×16 Matrix Multiply ASIC](https://github.com/chaezhun/MATMUL-ASIC) | Fixed-point matrix multiplier behind an SRAM interface, two MACs per cycle, no bubbles | Verilog, Vivado |
 | [CNN Convolution Accelerator](https://github.com/chaezhun/CONV_ACCELERATOR) | Three-channel 5×5 stride-3 convolution taken from RTL to place-and-route | Verilog, OpenROAD, Nangate45 |
 

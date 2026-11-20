@@ -47,7 +47,7 @@
 
 | 프로젝트 | 내용 | 기술 |
 |---|---|---|
-| [Pixel-to-World 매핑 가속기](https://github.com/chaezhun/PIXEL2WORLD_ACCELERATOR) | 전국 대학생 AI반도체 회로설계 경진대회, 2인 팀. 회전하는 이벤트 카메라의 픽셀 이벤트를 월드 좌표로 매핑해 칩 안의 월드 메모리에 누적. GPDK045 200 MHz 배치·배선 완료 | Verilog, Cadence Genus / Innovus, GPDK045 |
+| [Pixel-to-World 매핑 엔진](https://github.com/chaezhun/PIXEL2WORLD_ENGINE) | 전국 대학생 AI반도체 회로설계 경진대회, 2인 팀. 회전하는 이벤트 카메라의 픽셀 이벤트를 월드 좌표로 매핑해 칩 안의 월드 메모리에 누적. GPDK045 200 MHz 배치·배선 완료 | Verilog, Cadence Genus / Innovus, GPDK045 |
 | [16×16 행렬 곱셈 ASIC](https://github.com/chaezhun/MATMUL-ASIC) | SRAM 인터페이스 뒤에 붙는 고정소수점 행렬 곱셈기. 사이클당 2 MAC, 버블 없음 | Verilog, Vivado |
 | [CNN 컨볼루션 가속기](https://github.com/chaezhun/CONV_ACCELERATOR) | 3채널 5×5 stride-3 컨볼루션. RTL부터 배치·배선까지 완주 | Verilog, OpenROAD, Nangate45 |
 
