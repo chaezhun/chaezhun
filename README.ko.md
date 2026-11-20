@@ -4,11 +4,11 @@
 
 중앙대학교 전자전기공학부 학부생이고 2027년 2월 졸업 예정이다. AI·신호 연산을 위한 디지털
 하드웨어를 설계한다. 컨볼루션 연산기, 고정소수점 데이터패스, DDR2 위에서 측정한 LLM 디코딩용
-무손실 KV 캐시 엔진, 그리고 그것이 소프트웨어 레퍼런스와 비트 단위로 같다는 것을 증명하는
-테스트벤치를 만든다.
+무손실 KV 캐시 엔진, 배치·배선까지 200 MHz로 닫은 이벤트 카메라 가속기, 그리고 그것이
+소프트웨어 레퍼런스와 비트 단위로 같다는 것을 증명하는 테스트벤치를 만든다.
 
 주로 다루는 영역은 RTL 자체보다 그 주변까지다. 양자화 상수, 버스 인터페이스, 타이밍 클로저,
-골든 모델 검증. Verilog에서 배치·배선을 마친 레이아웃까지, 비트스트림에서 동작하는 보드
+골든 모델 검증. Verilog에서 배치·배선을 마친 레이아웃까지(OpenROAD와 Cadence Innovus 양쪽), 비트스트림에서 동작하는 보드
 시연까지 완주해 봤다.
 
 [![Email](https://img.shields.io/badge/jinny20020202@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:jinny20020202@gmail.com)
@@ -47,6 +47,7 @@
 
 | 프로젝트 | 내용 | 기술 |
 |---|---|---|
+| [Pixel-to-World 매핑 가속기](https://github.com/chaezhun/PIXEL2WORLD_ACCELERATOR) | 전국 대학생 AI반도체 회로설계 경진대회, 2인 팀. 회전하는 이벤트 카메라의 픽셀 이벤트를 월드 좌표로 매핑해 칩 안의 월드 메모리에 누적. GPDK045 200 MHz 배치·배선 완료 | Verilog, Cadence Genus / Innovus, GPDK045 |
 | [16×16 행렬 곱셈 ASIC](https://github.com/chaezhun/MATMUL-ASIC) | SRAM 인터페이스 뒤에 붙는 고정소수점 행렬 곱셈기. 사이클당 2 MAC, 버블 없음 | Verilog, Vivado |
 | [CNN 컨볼루션 가속기](https://github.com/chaezhun/CONV_ACCELERATOR) | 3채널 5×5 stride-3 컨볼루션. RTL부터 배치·배선까지 완주 | Verilog, OpenROAD, Nangate45 |
 
@@ -78,6 +79,7 @@
 | YOLOv2 | 22개 레이어 전체를 Artix-7 한 장에. C 레퍼런스와 레이어 단위 **0 mismatch**, 81.25 MHz WNS −0.18 ns |
 | HFT | 주가 7,700배 차이에도 **지연 890 ns 동일**. 33 → 100 MHz, 타이밍 위반 0건 |
 | 어텐션 | 어텐션 헤드 전체를 **118.2 MHz, 칩 자원 약 10%** 로. 출력 1,024개 보드 검증 |
+| Pixel-to-World | GPDK045에서 **배치·배선까지 200 MHz 충족**(셋업 +65 ps, hold +31 ps). 같은 조건의 이벤트 단위 기준 설계 대비 로직 면적 **1/1.91**, 이벤트당 로직 에너지 **1/2.43**. 8,800만 이벤트에서 월드 칸 123,904개 **전부 골든모델과 같음** |
 | 행렬곱 ASIC | **2,051 사이클 중 2,048 사이클 가동**(99.85%), 정답 256개 전부 일치 |
 | 컨볼루션 | 채점 면적 **295,842 → 106,234 µm²** (2.8배), 점수 41.3 → 33.1. 1 GHz에서 **최악 경로 여유 +0.10 ns·DRC 0**으로 물리 구현 사인오프 |
 | K-means FPU | 보드 실측 **187.75 ms → 60.02 ms** (3.13배) |
@@ -108,27 +110,28 @@
 |---|---|
 | **언어** | **Verilog**, SystemVerilog · **C**, C++ · **Python** (PyTorch, NumPy) · 셸 스크립트 |
 | **환경** | **Linux** (Ubuntu, Yocto, WSL), Git, Makefile |
-| **EDA** | Vivado (xsim, MIG, XADC 포함), Questa / ModelSim, NCverilog, OpenROAD, Icarus |
-| **하드웨어** | AXI4 / AXI4-Lite / APB, DDR2 (Xilinx MIG), CAN, UART, I2C, DMA, FSM 설계, 파이프라이닝, 타이밍 클로저 |
-| **플랫폼** | Artix-7 (Nexys A7), MicroBlaze, RISC-V SoC, FreeRTOS, Arduino / ESP8266 |
+| **EDA** | Vivado (xsim, MIG, XADC 포함), Cadence Genus / Innovus / Conformal LEC / Xcelium, Questa / ModelSim, NCverilog, Verilator, OpenROAD, Icarus, OpenRAM / CACTI |
+| **하드웨어** | AXI4 / AXI4-Lite / APB, DDR2 (Xilinx MIG), CAN, UART, I2C, DMA, FSM 설계, 파이프라이닝, 타이밍 클로저, clock gating, SRAM 뱅킹 |
+| **플랫폼** | Artix-7 (Nexys A7), MicroBlaze, RISC-V SoC, FreeRTOS, Arduino / ESP8266 · GPDK045, Nangate45 표준 셀 |
 
 **Top languages** — 위 저장소들의 소스 바이트 기준
 
 ```text
-Verilog        ██████████░░░░░░░░░░░░░░░░░░░░  33%
-Python         █████████░░░░░░░░░░░░░░░░░░░░░  31%
-C              ████░░░░░░░░░░░░░░░░░░░░░░░░░░  15%
-SystemVerilog  ███░░░░░░░░░░░░░░░░░░░░░░░░░░░  10%
+Verilog        ███████████░░░░░░░░░░░░░░░░░░░  35%
+Python         ██████████░░░░░░░░░░░░░░░░░░░░  34%
+C              ████░░░░░░░░░░░░░░░░░░░░░░░░░░  13%
+SystemVerilog  ███░░░░░░░░░░░░░░░░░░░░░░░░░░░   9%
 Tcl            █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   4%
 ```
 
-**Most used topics** — `verilog` · `fpga` · `rtl` · `asic` · `risc-v` · `fixed-point` · `embedded` · `pytorch`
+**Most used topics** — `verilog` · `fpga` · `rtl` · `asic` · `event-camera` · `risc-v` · `fixed-point` · `embedded` · `pytorch`
 
 ## 📜 Certificates
 
 | 자격 | 점수·등급 | 취득 |
 |---|---|---|
 | TOEIC | 910점 (LC 475 / RC 435) | 2024.12 |
+| OPIc (영어) | IM2 | 2026.09 |
 | 제2종 보통 운전면허 | — | 2021.07 |
 
 ---

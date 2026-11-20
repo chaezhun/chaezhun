@@ -4,12 +4,14 @@
 
 Undergraduate in Electrical and Electronics Engineering at Chung-Ang University, graduating
 February 2027. I design digital hardware for AI and signal workloads — convolution engines,
-fixed-point datapaths, a lossless KV-cache engine for LLM decoding measured on DDR2, and the
-testbenches that prove they match a software reference bit for bit.
+fixed-point datapaths, a lossless KV-cache engine for LLM decoding measured on DDR2, an
+event-camera accelerator closed at 200 MHz through place-and-route, and the testbenches that
+prove they match a software reference bit for bit.
 
 Most of my work sits between the RTL and the system around it: quantisation constants, bus
-interfaces, timing closure, golden-model verification. I have taken a design from Verilog to a
-placed-and-routed layout, and from a bitstream to a working board demonstration.
+interfaces, timing closure, golden-model verification. I have taken designs from Verilog to a
+placed-and-routed layout in both OpenROAD and Cadence Innovus, and from a bitstream to a working
+board demonstration.
 
 [![Email](https://img.shields.io/badge/jinny20020202@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:jinny20020202@gmail.com)
 
@@ -47,6 +49,7 @@ Military service 2023.03 – 2024.09.
 
 | Project | What it is | Stack |
 |---|---|---|
+| [Pixel-to-World Mapping Accelerator](https://github.com/chaezhun/PIXEL2WORLD_ACCELERATOR) | National AI-semiconductor contest, two-person team. Maps every pixel event of a rotating event camera to world coordinates and accumulates it in an on-chip world memory; 200 MHz in GPDK045 through place-and-route | Verilog, Cadence Genus / Innovus, GPDK045 |
 | [16×16 Matrix Multiply ASIC](https://github.com/chaezhun/MATMUL-ASIC) | Fixed-point matrix multiplier behind an SRAM interface, two MACs per cycle, no bubbles | Verilog, Vivado |
 | [CNN Convolution Accelerator](https://github.com/chaezhun/CONV_ACCELERATOR) | Three-channel 5×5 stride-3 convolution taken from RTL to place-and-route | Verilog, OpenROAD, Nangate45 |
 
@@ -78,6 +81,7 @@ Military service 2023.03 – 2024.09.
 | YOLOv2 | all 22 layers on one Artix-7, **0 mismatch** against the C reference layer by layer; WNS −0.18 ns at 81.25 MHz |
 | HFT | **890 ns latency regardless of a 7,700× price range**; 33 → 100 MHz, zero timing violations |
 | Attention | a full attention head at **118.2 MHz using ~10% of the device**, 1,024 outputs verified on board |
+| Pixel-to-world | **200 MHz closed through place-and-route** in GPDK045 (setup +65 ps, hold +31 ps); against an equal per-event baseline, logic area **1/1.91** and logic energy per event **1/2.43**; all 123,904 world cells **equal the golden model** over 88 M events |
 | Matmul ASIC | **2,048 of 2,051 cycles active** (99.85%), all 256 golden values matched |
 | Convolution | scored area **295,842 → 106,234 µm²** (2.8×), score 41.3 → 33.1; physical implementation signed off with **+0.10 ns worst-path slack and zero DRC** at 1 GHz |
 | K-means FPU | **187.75 ms → 60.02 ms** (3.13×) measured on the board |
@@ -109,27 +113,28 @@ Military service 2023.03 – 2024.09.
 |---|---|
 | **Languages** | **Verilog**, SystemVerilog · **C**, C++ · **Python** (PyTorch, NumPy) · shell |
 | **Environment** | **Linux** (Ubuntu, Yocto, WSL), Git, Makefile |
-| **EDA** | Vivado (incl. xsim, MIG, XADC), Questa / ModelSim, NCverilog, OpenROAD, Icarus |
-| **Hardware** | AXI4 / AXI4-Lite / APB, DDR2 (Xilinx MIG), CAN, UART, I2C, DMA, FSM design, pipelining, timing closure |
-| **Platforms** | Artix-7 (Nexys A7), MicroBlaze, RISC-V SoC, FreeRTOS, Arduino / ESP8266 |
+| **EDA** | Vivado (incl. xsim, MIG, XADC), Cadence Genus / Innovus / Conformal LEC / Xcelium, Questa / ModelSim, NCverilog, Verilator, OpenROAD, Icarus, OpenRAM / CACTI |
+| **Hardware** | AXI4 / AXI4-Lite / APB, DDR2 (Xilinx MIG), CAN, UART, I2C, DMA, FSM design, pipelining, timing closure, clock gating, SRAM banking |
+| **Platforms** | Artix-7 (Nexys A7), MicroBlaze, RISC-V SoC, FreeRTOS, Arduino / ESP8266 · GPDK045, Nangate45 standard cells |
 
 **Top languages** — by source bytes across the repositories above
 
 ```text
-Verilog        ██████████░░░░░░░░░░░░░░░░░░░░  33%
-Python         █████████░░░░░░░░░░░░░░░░░░░░░  31%
-C              ████░░░░░░░░░░░░░░░░░░░░░░░░░░  15%
-SystemVerilog  ███░░░░░░░░░░░░░░░░░░░░░░░░░░░  10%
+Verilog        ███████████░░░░░░░░░░░░░░░░░░░  35%
+Python         ██████████░░░░░░░░░░░░░░░░░░░░  34%
+C              ████░░░░░░░░░░░░░░░░░░░░░░░░░░  13%
+SystemVerilog  ███░░░░░░░░░░░░░░░░░░░░░░░░░░░   9%
 Tcl            █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   4%
 ```
 
-**Most used topics** — `verilog` · `fpga` · `rtl` · `asic` · `risc-v` · `fixed-point` · `embedded` · `pytorch`
+**Most used topics** — `verilog` · `fpga` · `rtl` · `asic` · `event-camera` · `risc-v` · `fixed-point` · `embedded` · `pytorch`
 
 ## 📜 Certificates
 
 | Certificate | Score / Grade | Date |
 |---|---|---|
 | TOEIC | 910 (LC 475 / RC 435) | 2024.12 |
+| OPIc (English) | IM2 | 2026.09 |
 | Driver's licence, Class 2 Regular | — | 2021.07 |
 
 ---
